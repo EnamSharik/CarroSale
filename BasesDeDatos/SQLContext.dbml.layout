@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SQLContext">
+  <DataContextMoniker Name="/SQLContextDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8f50d81c-c303-439c-a0ba-8952773d75c1" absoluteBounds="5.75, 4, 2, 1.3862939453125">
+      <DataClassMoniker Name="/SQLContextDataContext/TRADEMARK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="40daa897-76ca-43d6-beb6-8b15cf4942d3" absoluteBounds="5.765, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7ee8a262-7dd9-4b78-894d-dae8477258fa" absoluteBounds="2.125, 3.375, 2, 3.1170068359375">
+      <DataClassMoniker Name="/SQLContextDataContext/OWNER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54323515-c007-4b96-8484-31470df6f26e" absoluteBounds="2.14, 3.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f057cc78-6284-42d4-a155-a049e728fdd7" absoluteBounds="5.625, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SQLContextDataContext/MODEL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c5b2b35-dd6b-4dec-8e47-0af5eca49bf4" absoluteBounds="5.64, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.6875 : 4); (6.6875 : 2.32859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SQLContextDataContext/TRADEMARK/TRADEMARK_MODEL" />
+      <nodes>
+        <classShapeMoniker Id="8f50d81c-c303-439c-a0ba-8952773d75c1" />
+        <classShapeMoniker Id="f057cc78-6284-42d4-a155-a049e728fdd7" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="dd6e678e-a2cf-4682-b445-21faec02ea1f" absoluteBounds="2.25, 0.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/SQLContextDataContext/VEHICLE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8ac5f813-e907-40c9-a900-849d167c1573" absoluteBounds="2.265, 1.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.625 : 1.53929768880208); (4.25 : 1.53929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SQLContextDataContext/MODEL/MODEL_VEHICLE" />
+      <nodes>
+        <classShapeMoniker Id="f057cc78-6284-42d4-a155-a049e728fdd7" />
+        <classShapeMoniker Id="dd6e678e-a2cf-4682-b445-21faec02ea1f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.1875 : 3.375); (3.1875 : 2.78049967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SQLContextDataContext/OWNER/OWNER_VEHICLE" />
+      <nodes>
+        <classShapeMoniker Id="7ee8a262-7dd9-4b78-894d-dae8477258fa" />
+        <classShapeMoniker Id="dd6e678e-a2cf-4682-b445-21faec02ea1f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

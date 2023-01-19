@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="VEHICULOS" Class="SQLContextDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=BRANDON-PC;Initial Catalog=VEHICULOS;Integrated Security=True" SettingsObjectName="Tablas.Properties.Settings" SettingsPropertyName="VEHICULOSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TRADEMARK" Member="TRADEMARK">
+    <Type Name="TRADEMARK">
+      <Column Name="ID_TRADEMARK" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="STATE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TRADEMARK_MODEL" Member="MODEL" ThisKey="ID_TRADEMARK" OtherKey="ID_TRADEMARK" Type="MODEL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OWNER" Member="OWNER">
+    <Type Name="OWNER">
+      <Column Name="ID_OWNER" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NAME1" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NAME2" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LASTN1" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LASTN2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NUMBERPHONE" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="DPI" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="GENRE" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DIRECTION" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="NIT" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="STATE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="OWNER_VEHICLE" Member="VEHICLE" ThisKey="ID_OWNER" OtherKey="ID_OWNER" Type="VEHICLE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MODEL" Member="MODEL">
+    <Type Name="MODEL">
+      <Column Name="ID_MODEL" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_TRADEMARK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="STATE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="MODEL_VEHICLE" Member="VEHICLE" ThisKey="ID_MODEL" OtherKey="ID_MODEL" Type="VEHICLE" />
+      <Association Name="TRADEMARK_MODEL" Member="TRADEMARK" ThisKey="ID_TRADEMARK" OtherKey="ID_TRADEMARK" Type="TRADEMARK" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VEHICLE" Member="VEHICLE">
+    <Type Name="VEHICLE">
+      <Column Name="PLACA" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_OWNER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_MODEL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="YEAR" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="STATE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ID_VEHICLE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VEHICLE_STATE" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="MODEL_VEHICLE" Member="MODEL" ThisKey="ID_MODEL" OtherKey="ID_MODEL" Type="MODEL" IsForeignKey="true" />
+      <Association Name="OWNER_VEHICLE" Member="OWNER" ThisKey="ID_OWNER" OtherKey="ID_OWNER" Type="OWNER" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
